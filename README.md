@@ -220,3 +220,4 @@ tar -czvf backup.tar.gz backup.sql
 ```
 ls -lh backup.tar.gz
 ```
+![image](https://github.com/tungbui2402/backup/assets/129025623/ee5e7a24-5780-4039-b846-9e9dc8997bad)
