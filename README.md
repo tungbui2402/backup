@@ -181,4 +181,42 @@ mysql -uroot -p mydb < full_backup.sql
 ```
 sudo mysqlbinlog /var/log/mysql/mysql-bin.(file cũ) | mysql -uroot -p
 ```
-- 
+
+### 4.3. Archive backup
+Archive backup là một loại sao lưu dữ liệu, thường đi kèm với việc nén và mã hóa, được thiết kế để lưu trữ dữ liệu trong thời gian dài, thậm chí là trong nhiều năm. Mục tiêu của nó là bảo vệ và giữ lại dữ liệu cho mục đích lâu dài, thường liên quan đến việc tuân thủ các yêu cầu bảo mật và quy định.
+
+Ưu điểm:
+- Bảo vệ Toàn diện Dữ liệu: Archive backup đảm bảo việc bảo vệ toàn bộ dữ liệu tại một điểm thời điểm cụ thể, bao gồm cả các thay đổi và thậm chí là cấu trúc thư mục.
+
+- Giữ Nguyên Cấu Trúc Thư Mục: Khi dữ liệu được gói vào một tập tin hoặc thư mục archive, cấu trúc thư mục ban đầu thường được duy trì, giúp việc khôi phục dữ liệu dễ dàng hơn.
+
+- Giảm Dung Lượng Lưu Trữ: Dữ liệu được nén và đóng gói lại thành một tập tin hoặc thư mục duy nhất, giảm dung lượng lưu trữ so với việc lưu trữ từng tệp tin riêng lẻ.
+
+- Bảo vệ Khỏi Xóa và Thay Đổi: Dữ liệu trong archive backup thường được bảo vệ khỏi việc xóa hoặc thay đổi, giúp ngăn chặn mất mát dữ liệu không mong muốn.
+
+- Dễ Dàng Di Chuyển và Lưu Trữ: Dữ liệu được gói vào một tập tin hoặc thư mục, làm cho quá trình di chuyển và lưu trữ dữ liệu trở nên dễ dàng hơn.
+
+Nhược Điểm:
+- Khả Năng Tăng Dung Lượng: Archive backup có thể tăng kích thước của dữ liệu sau mỗi sao lưu, đặc biệt là khi dữ liệu thay đổi đáng kể.
+
+- Thời Gian và Tài Nguyên: Quá trình tạo và quản lý các tập tin archive có thể tốn nhiều thời gian và tài nguyên, đặc biệt là với các hệ thống có dung lượng lớn.
+
+- Không Phù Hợp cho Sao Lưu Tự Động Liên tục: Việc tạo archive backup có thể không phù hợp cho các quy trình sao lưu tự động liên tục, nơi cần thực hiện sao lưu tương tác hoặc thậm chí là theo thời gian thực.
+
+- Khả Năng Phục Hồi Tương Đối Chậm: Quá trình khôi phục dữ liệu từ archive backup có thể tương đối chậm, đặc biệt nếu cần phải trích xuất và phục hồi toàn bộ tập tin hoặc thư mục.
+
+- Không Phù Hợp cho Dữ Liệu Lớn và Liên tục: Các hệ thống có dung lượng lớn và cần sao lưu liên tục có thể gặp khó khăn khi sử dụng archive backup do khả năng tăng kích thước và thời gian thực hiện.
+
+Demo:
+- Sử Dụng mysqldump để Tạo Bản Sao Lưu:
+```
+mysqldump -u your_username -p your_database > backup.sql
+```
+- Nén và Đóng Gói Bản Sao Lưu thành Tập Tin Archive:
+```
+tar -czvf backup.tar.gz backup.sql
+```
+- Kiểm Tra Tập Tin Archive:
+```
+ls -lh backup.tar.gz
+```
