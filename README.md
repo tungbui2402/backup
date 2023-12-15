@@ -1,6 +1,6 @@
 # Các giải pháp backup
 ## 1. Backup là gì?
-Backup dữ liệu hay còn được gọi với thuật ngữ chuyên môn là backup database. Đây là hình thức copy lại toàn bộ dữ liệu trong máy tính, máy chủ hay server…phòng trường hợp thiết bị bị mất dữ liệu trong khi hoạt động do hư hỏng, sập nguồn…Từ đó có thể dễ dàng phục hồi lại dữ liệu của mình và tránh việc dữ liệu bị mất vĩnh viễn.
+Back up hay sao lưu dữ liệu là chỉ hành động sao chép, lưu lại toàn bộ các dữ liệu có trong máy chủ, máy tính, server,… Hoặc trên những  thiết bị  có khả năng lưu trữ . Việc lưu trữ ở một hoặc nhiều thiết bị có khả năng lưu trữ dữ liệu khác có thể tiến hành. Từ đó trở thành dữ liệu dự phòng sử dụng khi dữ liệu trước đó chẳng may bị mất.
 
 ## 2. Tầm quan trọng của việc Backup dữ liệu 
 Backup dữ liệu là vô cùng cần thiết đối với cả cá nhân lẫn tổ chức. Cho dù bạn đang sử dụng máy bàn hay laptop và hơn thế nữa là cả một hệ thống máy chủ server cho một công ty. Thì việc bảo vệ và bảo mật thông tin dữ liệu luôn là nhiệm vụ được ưu tiên hàng đầu.
